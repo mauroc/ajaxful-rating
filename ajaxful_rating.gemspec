@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Edgar J. Suarez", "Denis Odorcic"]
   s.date = "2012-01-07"
-  s.description = "Provides a simple way to add rating functionality to your application."
+  s.description = "updates by coupdemistral@gmail.com to original version by Authors to fix issues in Rails 5.1"
   s.email = ["edgar.js@gmail.com", "denis.odorcic@gmail.com"]
   s.extra_rdoc_files = [
     "README.textile"
