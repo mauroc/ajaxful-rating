@@ -44,7 +44,7 @@ module AjaxfulRating # :nodoc:
       }.merge(remote_options)
       
       if @remote_options[:url].nil?
-        rateable_name = ActionController::RecordIdentifier.dom_class(rateable)
+        rateable_name = ActionView::RecordIdentifier.dom_class(rateable)
         url = "rate_#{rateable_name}_path"
         if @template.respond_to?(url)
           @remote_options[:url] = @template.send(url, rateable)
@@ -92,14 +92,15 @@ module AjaxfulRating # :nodoc:
         :stars => value,
         :dimension => options[:dimension],
         :small => options[:small],
-        :show_user_rating => options[:show_user_rating]
+        :show_user_rating => options[:show_user_rating],
       }.to_query
       
       options = {
         :class => css_class,
         :title => i18n(:hover, value),
         :method => remote_options[:method] || :post,
-        :remote => true
+        :remote => true,
+        :authenticity_token => 'true'
       }
       
       href = "#{remote_options[:url]}?#{query}"
